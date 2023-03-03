@@ -1,0 +1,31 @@
+#include<stdio.h>
+
+// define a structure for player details
+struct player {
+    char name[50];
+    int runs_scored;
+};
+
+int main() {
+    int n, i, total_runs=0;
+    
+    printf("Enter the number of players: ");
+    scanf("%d", &n);
+    
+    // create an array of structures to store player details
+    struct player p[n];
+    
+    // read player details and calculate total runs scored
+    for(i=0; i<n; i++) {
+        printf("Enter the name of player %d: ", i+1);
+        scanf("%s", p[i].name);
+        printf("Enter the runs scored by player %d: ", i+1);
+        scanf("%d", &p[i].runs_scored);
+        total_runs += p[i].runs_scored;
+    }
+    
+    // print total runs scored by the cricket team
+    printf("\nTotal runs scored by the cricket team: %d", total_runs);
+    
+    return 0;
+}
